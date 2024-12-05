@@ -3,7 +3,7 @@
   <app-level
     *ngFor="let level of levels"
     [level]="level"
-    (start)="startQuiz(level.id)"
-    (completed)="onLevelCompleted(level.id)">
+    (start)="startQuiz(level.num)"
+    (completed)="onLevelCompleted(level.num)">
   </app-level>
 </div>

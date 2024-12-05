@@ -1,7 +1,7 @@
-<h2>Quiz for Level {{ levelId }}</h2>
-<p>{{ question }}</p>
+<h2>Quiz for Level {{ level.num }}</h2>
+<p>{{ level.question }}</p>
 <div>
-  <button *ngFor="let option of options" (click)="checkAnswer(option)">
+  <button *ngFor="let option of level.reponses" (click)="checkAnswer(option)">
     {{ option }}
   </button>
 </div>
