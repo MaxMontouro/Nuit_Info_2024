@@ -1,0 +1,7 @@
+<h2>Quiz for Level {{ levelId }}</h2>
+<p>{{ question }}</p>
+<div>
+  <button *ngFor="let option of options" (click)="checkAnswer(option)">
+    {{ option }}
+  </button>
+</div>
