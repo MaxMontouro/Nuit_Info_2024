@@ -2,7 +2,7 @@ export class Level {
     // Attributs
     num!: number;
     question!: string;
-    reponsesPossible!: string;
+    reponses!: string[];
     idReponse!: number;
     background!: string;
     posXPlateforme!: number;
@@ -10,11 +10,11 @@ export class Level {
 
 
     // Méthodes
-    constructor(num: number, question: string, reponsesPossible: string, idReponse: number, background: string, posXPlateforme: number, posYPlateforme: number)
+    constructor(num: number, question: string, reponses: string[], idReponse: number, background: string, posXPlateforme: number, posYPlateforme: number)
     {
         this.num = num;
         this.question = question;
-        this.reponsesPossible = reponsesPossible;
+        this.reponses = reponses;
         this.idReponse = idReponse;
         this.background = background;
         this.posXPlateforme = posXPlateforme;
