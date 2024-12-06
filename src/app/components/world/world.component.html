@@ -1,20 +1,3 @@
-<!-- <h1>World Map</h1>
-<div class="levels">
- <app-level
-    *ngFor="let level of levels"
-    [level]="level"
-    (start)="startQuiz(level.num)"
-    (completed)="onLevelCompleted(level.num)">
-  </app-level> 
-
-  <div *ngFor="let level of levels" class="level-container">
-    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-      <ellipse cx="100" cy="110" rx="40" ry="20" fill="#FFD700" transform="skewX(-20)" />
-      <ellipse cx="100" cy="110" rx="35" ry="15" fill="#1E90FF" transform="skewX(-20)" />
-    </svg>
-  </div>
-</div> -->
-
 <h1>World Map</h1>
 <div class="world-map">
   <div class="levels">
@@ -24,9 +7,7 @@
         (start)="startQuiz(level.num)"
         (completed)="onLevelCompleted(level.num)"
       ></app-level>
-      
     </div>
-    <!-- <app-player></app-player> -->
   </div>
 </div>
 
