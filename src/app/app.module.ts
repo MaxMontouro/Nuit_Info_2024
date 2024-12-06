@@ -11,6 +11,7 @@ import { HomeComponent } from './components/base-site/home/home.component';
 import { WorldComponent } from './components/world/world.component';
 import { LevelComponent } from './components/world/level/level.component';
 import { QuizComponent } from './components/quiz/quiz.component';
+import { PlayerComponent } from './components/world/player/player.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { QuizComponent } from './components/quiz/quiz.component';
     HomeComponent,
     WorldComponent,
     LevelComponent,
-    QuizComponent
+    QuizComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,

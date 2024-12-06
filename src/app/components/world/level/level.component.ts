@@ -26,11 +26,8 @@ export class LevelComponent {
       this.start.emit(this.level.num);
     }
     else {
-      if(this.playerService.getPlayer().numNiveauxPasses.includes(this.level.num)) {
-        this.levelService.moveToNextLevel();
-      }
-      else {
-        this.levelService.moveToPreviousLevel();
+      if(this.level.status !== LevelStatus.Locked) {
+        this.playerService.moveToLevel(this.level.num);
       }
     }
   }
@@ -41,5 +38,9 @@ export class LevelComponent {
 
   isUnlocked(): boolean {
     return this.level.status === LevelStatus.Unlocked;
+  }
+
+  isPlayerOnLevel(): boolean {
+    return this.level.num === this.playerService.getPlayer().numNiveauActuel;
   }
 }

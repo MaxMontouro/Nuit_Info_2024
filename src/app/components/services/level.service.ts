@@ -16,8 +16,8 @@ export class LevelService {
       ["Les muscles", "Les os", "Les cheveux", "Les veines"],
       1,
       "blue",
-      100,
-      100,
+      700,
+      20,
       LevelStatus.Unlocked
     ),
     new Level(
@@ -27,7 +27,7 @@ export class LevelService {
       ["Dans tes artères", "Dans ton estomac", "Dans tes poumons", "Dans ton cerveau"],
       0,
       "gray",
-      200,
+      800,
       100,
       LevelStatus.Locked
     ),
@@ -38,8 +38,8 @@ export class LevelService {
       ["Tes reins", "Ton foie", "Tes poumons", "Ton cerveau"],
       0,
       "gray",
-      300,
-      100,
+      750,
+      200,
       LevelStatus.Locked
     ),
     new Level(
@@ -48,9 +48,9 @@ export class LevelService {
       "Salut, on est microscopiques, mais on produit la moitié de l’oxygène que tu respires ! Si on était dans ton corps, on jouerait le rôle de quoi ?",
       ["Les cellules", "Les poumons", "Les muscles", "Les yeux"],
       1,
-      "blue",
-      400,
-      100,
+      "gray",
+      700,
+      300,
       LevelStatus.Locked
     ),
     new Level(
@@ -60,8 +60,8 @@ export class LevelService {
       ["Le cerveau", "Le système nerveux", "Les veines", "Les artères"],
       2,
       "gray",
-      500,
-      100,
+      750,
+      400,
       LevelStatus.Locked
     ),
     new Level(
@@ -71,8 +71,8 @@ export class LevelService {
       ["Les muscles", "Les poumons", "Les artères", "Le système digestif"],
       0,
       "gray",
-      600,
-      100,
+      800,
+      500,
       LevelStatus.Locked
     ),
     new Level(
@@ -82,8 +82,8 @@ export class LevelService {
       ["Ton cerveau", "Ton estomac", "Ton cœur", "Tes os"],
       1,
       "gray",
-      700,
-      100,
+      750,
+      600,
       LevelStatus.Locked
     ),
     new Level(
@@ -92,9 +92,9 @@ export class LevelService {
       "Salut, je suis la lumière magique des profondeurs, j’éclaire là où il fait tout noir. Si j’étais dans ton corps, tu me trouverais où ?",
       ["Dans tes yeux", "Dans tes ongles", "Dans ton foie", "Dans ton cerveau"],
       0,
-      "blue",
-      800,
-      100,
+      "gray",
+      700,
+      700,
       LevelStatus.Locked
     ),
     new Level(
@@ -104,8 +104,8 @@ export class LevelService {
       ["Tes cheveux", "Ta peau", "Tes ongles", "Ton foie"],
       1,
       "gray",
-      900,
-      100,
+      750,
+      800,
       LevelStatus.Locked
     ),
     new Level(
@@ -115,8 +115,8 @@ export class LevelService {
       ["Les cheveux", "Les muscles", "Les veines", "Les os"],
       0,
       "gray",
-      1000,
-      100,
+      800,
+      900,
       LevelStatus.Locked
     ),
     new Level(
@@ -126,8 +126,8 @@ export class LevelService {
       ["Ton cœur", "Ton foie", "Tes muscles", "Ton estomac"],
       3,
       "gray",
-      1100,
-      100,
+      750,
+      1000,
       LevelStatus.Locked
     ),
     new Level(
@@ -137,8 +137,8 @@ export class LevelService {
       ["Ton cœur", "Ta respiration", "Tes articulations", "Ton système digestif"],
       1,
       "gray",
-      1200,
-      100,
+      650,
+      1100,
       LevelStatus.Locked
     )
   ];

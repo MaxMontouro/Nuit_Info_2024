@@ -14,7 +14,6 @@ export class PlayerService {
 
   validateLevel(): void {
     this.player.numNiveauxPasses.push(this.player.numNiveauActuel);
-    this.player.numNiveauActuel++;
   }
 
   moveToNextLevel(): void {
@@ -23,5 +22,9 @@ export class PlayerService {
 
   moveToPreviousLevel(): void {
     this.player.numNiveauActuel--;
+  }
+
+  moveToLevel(levelId: number): void {
+    this.player.numNiveauActuel = levelId;
   }
 }
