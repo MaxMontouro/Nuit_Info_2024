@@ -1,5 +1,7 @@
 /*import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Level } from '../../models/level.model';
+import { LevelService } from '../services/level.service';
 
 @Component({
   selector: 'app-world',
@@ -9,26 +11,26 @@ import { Router } from '@angular/router';
   styleUrl: './world.component.scss',
 })
 export class WorldComponent {
-  levels = [
-    { id: 1, status: 'Débloqué' },
-    { id: 2, status: 'Bloqué' },
-    { id: 3, status: 'Bloqué' },
-  ];
+  levels: Level[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private levelService: LevelService, private router: Router) {
+    this.levels = this.levelService.getLevels();
+  }
 
   onLevelCompleted(levelId: number) {
-    const currentIndex = this.levels.findIndex((level) => level.id === levelId);
+    const level = this.levelService.getLevelById(levelId);
+    if (level) {
+      level.background = 'green'; // Marquer comme "Réussi"
+      this.levelService.updateLevel(level);
 
-    if (currentIndex !== -1) {
-      this.levels[currentIndex].status = 'Réussi';
-
-      if (currentIndex + 1 < this.levels.length) {
-        this.levels[currentIndex + 1].status = 'Débloqué';
+      const nextLevel = this.levelService.getLevelById(levelId + 1);
+      if (nextLevel) {
+        nextLevel.background = 'blue'; // Débloquer le niveau suivant
+        this.levelService.updateLevel(nextLevel);
       }
 
-      // Force Angular à détecter les changements
-      this.levels = [...this.levels];
+      // Mise à jour locale
+      this.levels = this.levelService.getLevels();
     }
   }
 

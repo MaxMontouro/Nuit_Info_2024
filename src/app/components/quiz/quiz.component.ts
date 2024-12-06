@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Level } from '../../models/level.model';
+import { LevelService } from '../services/level.service';
 
 @Component({
   selector: 'app-quiz',
@@ -9,17 +11,29 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './quiz.component.scss',
 })
 export class QuizComponent {
-  levelId!: number;
-  question = 'What is 2 + 2?';
-  options = [2, 3, 4, 5];
-  correctAnswer = 4;
+  level!: Level;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
-    this.levelId = +this.route.snapshot.paramMap.get('id')!;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private levelService: LevelService
+  ) {}
+
+  ngOnInit() {
+    const levelId = +this.route.snapshot.paramMap.get('id')!;
+    const level = this.levelService.getLevelById(levelId);
+
+    if (level) {
+      this.level = level;
+    } else {
+      // Rediriger si le niveau n'existe pas
+      alert('Level not found!');
+      this.router.navigate(['/world']);
+    }
   }
 
-  checkAnswer(answer: number) {
-    if (answer === this.correctAnswer) {
+  checkAnswer(answer: string) {
+    if (answer === this.level.reponses[this.level.idReponse]) {
       alert('Correct! Level Complete.');
       this.router.navigate(['/world']);
     } else {

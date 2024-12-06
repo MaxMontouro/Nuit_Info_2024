@@ -1,12 +1,12 @@
 export class Player {
     // Attributs
-    nbNiveauxPasses!: number;
-    nbNiveauActuel!: number;
+    numNiveauxPasses!: number[];
+    numNiveauActuel!: number;
 
     // Méthodes
-    constructor(nbNiveauxPasses: number, nbNiveauActuel: number)
+    constructor(numNiveauxPasses: number[], numNiveauActuel: number)
     {
-        this.nbNiveauxPasses = nbNiveauxPasses;
-        this.nbNiveauActuel = nbNiveauActuel;
+        this.numNiveauxPasses = numNiveauxPasses;
+        this.numNiveauActuel = numNiveauActuel;
     }
 }
