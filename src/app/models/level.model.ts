@@ -1,3 +1,9 @@
+export enum LevelStatus {
+    Validated = 'Validé',
+    Unlocked = 'Débloqué',
+    Locked = 'Bloqué',
+}
+
 export class Level {
     // Attributs
     num!: number;
@@ -7,10 +13,11 @@ export class Level {
     background!: string;
     posXPlateforme!: number;
     posYPlateforme!: number;
+    status!: LevelStatus;
 
 
     // Méthodes
-    constructor(num: number, question: string, reponses: string[], idReponse: number, background: string, posXPlateforme: number, posYPlateforme: number)
+    constructor(num: number, question: string, reponses: string[], idReponse: number, background: string, posXPlateforme: number, posYPlateforme: number, status: LevelStatus)
     {
         this.num = num;
         this.question = question;
@@ -19,5 +26,6 @@ export class Level {
         this.background = background;
         this.posXPlateforme = posXPlateforme;
         this.posYPlateforme = posYPlateforme;
+        this.status = status;
     }
 }

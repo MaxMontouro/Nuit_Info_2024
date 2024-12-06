@@ -35,6 +35,8 @@ export class QuizComponent {
   checkAnswer(answer: string) {
     if (answer === this.level.reponses[this.level.idReponse]) {
       alert('Correct! Level Complete.');
+      this.levelService.validateLevel(this.level.num);
+      this.levelService.moveToNextLevel();
       this.router.navigate(['/world']);
     } else {
       alert('Wrong answer, try again.');

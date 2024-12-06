@@ -1,6 +1,6 @@
 <div class="level" [style.backgroundColor]="getPlatformColor()">
   <h3>Level {{ level.num }}</h3>
-  <p>{{ level.question }}</p>
+  <p>Status: {{ level.status }}</p>
   <button *ngIf="level.background === 'blue'" (click)="launchLevel()">
     Start
   </button>
