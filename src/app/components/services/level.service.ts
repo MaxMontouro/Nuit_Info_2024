@@ -183,6 +183,21 @@ export class LevelService {
     const nextLevel = this.levels[currentLevelIndex + 1];
     if (nextLevel && nextLevel.status === LevelStatus.Unlocked) {
       this.currentLevelId = nextLevel.num;
+      this.playerService.moveToNextLevel();
+      return true;
+    }
+    return false;
+  }
+
+  // Passe au niveau précédent
+  moveToPreviousLevel(): boolean {
+    const currentLevelIndex = this.levels.findIndex(
+      (l) => l.num === this.currentLevelId
+    );
+    const previousLevel = this.levels[currentLevelIndex - 1];
+    if (previousLevel) {
+      this.currentLevelId = previousLevel.num;
+      this.playerService.moveToPreviousLevel();
       return true;
     }
     return false;
