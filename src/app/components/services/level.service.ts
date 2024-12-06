@@ -28,7 +28,7 @@ export class LevelService {
       0,
       "gray",
       800,
-      100,
+      120,
       LevelStatus.Locked
     ),
     new Level(
@@ -39,7 +39,7 @@ export class LevelService {
       0,
       "gray",
       750,
-      200,
+      220,
       LevelStatus.Locked
     ),
     new Level(
@@ -50,7 +50,7 @@ export class LevelService {
       1,
       "gray",
       700,
-      300,
+      320,
       LevelStatus.Locked
     ),
     new Level(
@@ -61,7 +61,7 @@ export class LevelService {
       2,
       "gray",
       750,
-      400,
+      420,
       LevelStatus.Locked
     ),
     new Level(
@@ -72,7 +72,7 @@ export class LevelService {
       0,
       "gray",
       800,
-      500,
+      520,
       LevelStatus.Locked
     ),
     new Level(
@@ -83,7 +83,7 @@ export class LevelService {
       1,
       "gray",
       750,
-      600,
+      620,
       LevelStatus.Locked
     ),
     new Level(
@@ -94,7 +94,7 @@ export class LevelService {
       0,
       "gray",
       700,
-      700,
+      720,
       LevelStatus.Locked
     ),
     new Level(
@@ -105,7 +105,7 @@ export class LevelService {
       1,
       "gray",
       750,
-      800,
+      820,
       LevelStatus.Locked
     ),
     new Level(
@@ -116,7 +116,7 @@ export class LevelService {
       0,
       "gray",
       800,
-      900,
+      920,
       LevelStatus.Locked
     ),
     new Level(
@@ -127,7 +127,7 @@ export class LevelService {
       3,
       "gray",
       750,
-      1000,
+      1020,
       LevelStatus.Locked
     ),
     new Level(
@@ -138,7 +138,7 @@ export class LevelService {
       1,
       "gray",
       650,
-      1100,
+      1120,
       LevelStatus.Locked
     )
   ];
