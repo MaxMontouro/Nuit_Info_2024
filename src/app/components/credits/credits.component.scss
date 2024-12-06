@@ -1,253 +1,259 @@
 /* Style général du corps */
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Style cartoon */
-    background-color: #87CEEB; /* Ciel bleu pour rappeler Bikini Bottom */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    text-align: center;
-    transition: background-color 0.3s ease-in-out; /* Transition pour le fond */
-    overflow: hidden;
+  font-family: "Comic Sans MS", cursive, sans-serif; /* Style cartoon */
+  background-color: #87ceeb; /* Ciel bleu pour rappeler Bikini Bottom */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out; /* Transition pour le fond */
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background-color: #fd6c9e; /* Jaune doré */
+  padding: 30px 0;
+  text-align: center;
+  color: #ffd700; /* Rouge vif */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: padding 0.3s ease-in-out; /* Transition de padding */
+}
+
+/* Titre du header */
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  padding: 0;
+  transition: font-size 0.3s ease-in-out; /* Transition de taille de titre */
+  text-shadow: 3px 3px 0 #000000; /* Effet cartoon */
+}
+
+/* Conteneur principal */
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex-direction: row;
+  transition: transform 0.3s ease-in-out; /* Transition pour toute la disposition */
+}
+
+/* Flèches de navigation */
+.arrow-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 5em;
+  color: #fd6c9e; /* Rouge vif */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 10px;
+}
+
+.arrow-btn:hover {
+  color: #fd6c9e; /* Rouge plus foncé */
+  transform: scale(1.2); /* Effet de zoom au survol */
+}
+
+.arrow-btn:focus {
+  outline: none;
+}
+
+/* Carte utilisateur */
+.credit-card {
+  background-color: #ffffff;
+  border: 3px solid #fd6c9e; /* Bordure dorée */
+  border-radius: 20px; /* Coins arrondis pour un style cartoon */
+  width: 400px;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre plus marquée */
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-out;
+  margin: auto;
+}
+
+.credit-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.credit-card-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Partie gauche et droite de la carte */
+.user-left,
+.user-right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.user-left img,
+.user-right img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.user-left img:hover,
+.user-right img:hover {
+  transform: scale(1.1); /* Effet de zoom sur l'image */
+}
+
+.user-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fd6c9e; /* Rouge vif */
+  margin: 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.user-description {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #2e8b57; /* Vert algue */
+  text-align: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Animation de transition */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  background-color: #ff4500; /* Rouge vif */
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1em;
+  position: fixed;
+  bottom: 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsiveness - Ajustements pour petits écrans */
+@media (max-width: 768px) {
   /* Header */
-  header {
-    width: 100%;
-    background-color: #FD6C9E; /* Jaune doré */
-    padding: 30px 0;
-    text-align: center;
-    color: #FFD700; /* Rouge vif */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: padding 0.3s ease-in-out; /* Transition de padding */
-  }
-  
-  /* Titre du header */
   header h1 {
-    font-size: 2.5em;
-    margin: 0;
-    padding: 0;
-    transition: font-size 0.3s ease-in-out; /* Transition de taille de titre */
-    text-shadow: 3px 3px 0 #000000; /* Effet cartoon */
+    font-size: 2em;
+    padding: 0 20px;
   }
-  
+
   /* Conteneur principal */
   .main-container {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    flex-direction: row;
-    transition: transform 0.3s ease-in-out; /* Transition pour toute la disposition */
   }
-  
-  /* Flèches de navigation */
-  .arrow-btn {
-    background-color: transparent;
-    border: none;
-    font-size: 5em;
-    color: #FD6C9E; /* Rouge vif */
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-    padding: 10px;
-  }
-  
-  .arrow-btn:hover {
-    color: #FD6C9E; /* Rouge plus foncé */
-    transform: scale(1.2); /* Effet de zoom au survol */
-  }
-  
-  .arrow-btn:focus {
-    outline: none;
-  }
-  
+
   /* Carte utilisateur */
   .credit-card {
-    background-color: #ffffff;
-    border: 3px solid #FD6C9E; /* Bordure dorée */
-    border-radius: 20px; /* Coins arrondis pour un style cartoon */
-    width: 400px;
-    padding: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre plus marquée */
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    animation: fadeIn 0.5s ease-out;
-  }
-  
-  .credit-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .credit-card-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  
-  /* Partie gauche et droite de la carte */
-  .user-left, .user-right {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .user-left img, .user-right img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .user-left img:hover, .user-right img:hover {
-    transform: scale(1.1);  /* Effet de zoom sur l'image */
-  }
-  
-  .user-name {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #FD6C9E; /* Rouge vif */
-    margin: 0;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .user-description {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #2E8B57; /* Vert algue */
-    text-align: center;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+    padding: 20px;
   }
-  
-  /* Animation de transition */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  /* Flèches */
+  .arrow-btn {
+    font-size: 4em;
   }
-  
-  /* Footer */
-  footer {
-    width: 100%;
-    background-color: #FF4500; /* Rouge vif */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
+
+  /* Réduction des images */
+  .user-left img,
+  .user-right img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .user-name {
+    font-size: 1.2em;
+  }
+
+  .user-description {
     font-size: 1em;
-    position: fixed;
-    bottom: 0;
-    transition: background-color 0.3s ease-in-out;
   }
-  
-  footer p {
-    margin: 0;
+
+  /* Déplacer les flèches en bas de l'écran pour les petits écrans */
+  .main-container {
+    position: relative;
+    padding-bottom: 100px;
   }
-  
-  /* Responsiveness - Ajustements pour petits écrans */
-  @media (max-width: 768px) {
-    /* Header */
-    header h1 {
-      font-size: 2em;
-      padding: 0 20px;
-    }
-  
-    /* Conteneur principal */
-    .main-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    /* Carte utilisateur */
-    .credit-card {
-      width: 90%;
-      padding: 20px;
-    }
-  
-    /* Flèches */
-    .arrow-btn {
-      font-size: 4em;
-    }
-  
-    /* Réduction des images */
-    .user-left img, .user-right img {
-      width: 80px;
-      height: 80px;
-    }
-  
-    .user-name {
-      font-size: 1.2em;
-    }
-  
-    .user-description {
-      font-size: 1em;
-    }
-  
-    /* Déplacer les flèches en bas de l'écran pour les petits écrans */
-    .main-container {
-      position: relative;
-      padding-bottom: 100px;
-    }
-  
-    #prev, #next {
-      position: absolute;
-      bottom: 10px;
-      font-size: 3em;
-      padding: 10px;
-    }
-  
-    #prev {
-      left: 10px;
-    }
-  
-    #next {
-      right: 10px;
-    }
+
+  #prev,
+  #next {
+    position: absolute;
+    bottom: 10px;
+    font-size: 3em;
+    padding: 10px;
   }
-  
-  /* Responsiveness - Ajustements pour très petits écrans */
-  @media (max-width: 780px) {
-    .credit-card {
-      width: 80%;
-      padding: 15px;
-    }
-  
-    .arrow-btn {
-      font-size: 3em;
-    }
-  
-    .user-left img, .user-right img {
-      width: 70px;
-      height: 70px;
-    }
-  
-    .user-name {
-      font-size: 1.1em;
-    }
-  
-    .user-description {
-      font-size: 0.9em;
-    }
+
+  #prev {
+    left: 10px;
   }
-  
+
+  #next {
+    right: 10px;
+  }
+}
+
+/* Responsiveness - Ajustements pour très petits écrans */
+@media (max-width: 780px) {
+  .credit-card {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .arrow-btn {
+    font-size: 3em;
+  }
+
+  .user-left img,
+  .user-right img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .user-name {
+    font-size: 1.1em;
+  }
+
+  .user-description {
+    font-size: 0.9em;
+  }
+}

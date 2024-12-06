@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrl: './tc.component.scss'
 })
 export class TCComponent {
-
 }
