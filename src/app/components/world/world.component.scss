@@ -2,3 +2,24 @@
   display: flex;
   gap: 1rem;
 }
+
+.locked {
+  background-color: gray;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.unlocked {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.validated {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}

@@ -1,9 +1,62 @@
 <h1>World Map</h1>
-<div class="levels">
+<!-- <div class="levels">
   <app-level
     *ngFor="let level of levels"
     [level]="level"
     (start)="startQuiz(level.id)"
     (completed)="onLevelCompleted(level.id)">
   </app-level>
+</div> -->
+
+<!-- <div *ngFor="let level of levels" [class.locked]="level.locked">
+  <h3>{{ level.name }}</h3>
+  <p>Statut : {{ level.locked ? 'Bloqué' : 'Débloqué' }}</p>
+  <button (click)="toggleLock(level.id)">
+    {{ level.locked ? 'Débloquer' : 'Bloquer' }} ce niveau
+  </button>
+</div>
+
+<div>
+  <h2>Niveau actuel : {{ currentLevel?.name }}</h2>
+  <button (click)="moveToNextLevel()">Passer au niveau suivant</button>
+</div> -->
+
+<!-- <div class="levels">
+  <app-level
+    *ngFor="let level of levels"
+    [level]="level"
+    [class.locked]="level.locked" 
+    (start)="startQuiz(level.id)"
+    (completed)="onLevelCompleted(level.id)">
+    
+    Contenu supplémentaire pour le niveau
+    <div>
+      <h3>{{ level.name }}</h3>
+      <p>Statut : {{ level.locked ? 'Bloqué' : 'Débloqué' }}</p>
+      <button (click)="toggleLock(level.id)">
+        {{ level.locked ? 'Débloquer' : 'Bloquer' }} ce niveau
+      </button>
+    </div>
+  </app-level>
+</div>
+
+Zone pour la navigation globale
+<div>
+  <h2>Niveau actuel : {{ currentLevel?.name }}</h2>
+  <button (click)="moveToNextLevel()">Passer au niveau suivant</button>
+</div> -->
+
+<div *ngFor="let level of levels" [ngClass]="getLevelClass(level)">
+  <h3>{{ level.name }}</h3>
+  <p>Statut : {{ level.status }}</p>
+  <button (click)="toggleLock(level.id)">
+    {{ level.status === LevelStatus.Locked ? 'Débloquer' : 'Bloquer' }}
+  </button>
+  <button (click)="validateLevel(level.id)" [disabled]="level.status !== LevelStatus.Unlocked">
+    Valider le niveau
+  </button>
+</div>
+
+<div>
+  <h2>Niveau actuel : {{ currentLevel?.name }}</h2>
 </div>
