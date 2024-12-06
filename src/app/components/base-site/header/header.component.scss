@@ -1,0 +1,326 @@
+/* General Styles */
+body {
+    background-color: #7DD3FC; /* Tailwind's sky-300 */
+    color: #4A5568; /* Tailwind's gray-800 */
+    font-family: sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    background-image: url('../../../assets/images/img_fond.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(3px);
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between; /* Pour séparer le logo et la navigation */
+    align-items: center;
+    padding: 1.25rem 1rem;
+    width: 57%; /* Full width */
+    box-sizing: border-box;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo {
+    width: 6rem;
+    height: 6rem;
+}
+
+.logo-text {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: center; /* Centre les onglets horizontalement */
+    gap: 1rem;
+    font-family: 'Bahiana';
+    font-size: 2.5rem;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #ffffff; /* Tailwind's green-600 */
+}
+
+/* Main Content Styles */
+.main-content {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.titre-image{
+    width: auto;
+    min-width: 400px;
+    max-width: 800px !important; /* Réduit la taille de l'image pour la rapprocher */
+    height: auto; /* Maintient les proportions de l'image */
+    object-fit: contain; /* Assure que l'image est bien contenue sans déformation */
+    margin-left: 244px;
+}
+
+
+/* Title Styling */
+.main-title {
+    font-size: 3rem; /* Assurez-vous que cette taille est la même que celle de .content-text */
+    color: #2D3748;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: 'Bahiana';
+    text-align: medium;
+    word-wrap: break-word;
+}
+
+.content-title {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Content Text Styling */
+.content-text {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #BEE3F8; /* Light blue background */
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    font-size: 1.25rem; /* Augmenter la taille de la police pour le contenu */
+    text-align: left;
+    font-family: 'McLaren';
+    text-align: justify;
+
+}
+
+.content-text p {
+    line-height: 1.6;
+}
+
+
+
+/* Call to Action Button Styling */
+.cta-button {
+    padding: 0.75rem 1.5rem; /* Ajustez selon vos besoins */
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 4rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Espace au-dessus du bouton */
+    font-family: 'Bahiana';
+}
+
+.content-container {
+    display: flex;
+    justify-content: center; /* Aligne les éléments horizontalement */
+    align-items: flex-end; /* Aligne les éléments en haut */
+    gap: 1rem; /* Réduit l'espace entre le texte et l'image */
+}
+
+.bob-image {
+    max-width: 30%; /* Réduit la taille de l'image pour la rapprocher */
+    height: auto; /* Maintient les proportions de l'image */
+    object-fit: contain; /* Assure que l'image est bien contenue sans déformation */
+    margin-right: 200px;
+}
+
+
+.cta-background {
+    background-image: url('../../../assets/images/splash.webp');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1.5rem; 
+}
+
+
+.cta-button:hover {
+    color: white;
+    scale: 1.2;
+}
+
+/* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Darkened background */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.popup-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+.popup-title {
+    font-size: 2rem;
+    color: #38B2AC;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.popup-body p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #2D3748;
+    text-align: justify;
+}
+
+.popup-body strong {
+    font-weight: 700;
+    color: #2F855A;
+    text-align: justify;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    color: #4A5568;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #2F855A;
+}
+
+/* Footer Styles */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-link {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.footer-link:hover {
+    background-color: #276749; /* Tailwind's green-600 */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .popup-title {
+        font-size: 1.75rem;
+    }
+
+    .popup-body p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 10rem;
+    }
+
+    .bob-image {
+        display: none;
+    }
+
+    .content-text {
+        max-width: 80%;
+        font-size: .8rem;
+    }
+
+    .titre-image {
+        margin-left: 0;
+        max-width: 10rem;
+        max-height: 7rem;
+    }
+
+    .nav-link {
+        margin-right: auto;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .popup-title {
+        font-size: 2rem;
+    }
+
+    .popup-body p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 3rem;
+    }
+
+    .bob-image {
+        display: none;
+    }
+
+    .content-text {
+        max-width: 80%;
+        font-size: 1.2rem;
+    }
+
+    .titre-image {
+        margin-left: 0;
+        max-width: 20rem;
+        max-height: 20rem;
+        margin: auto;
+    }
+
+    .nav-link {
+        margin-right: auto;
+    }
+}
+
+@font-face {
+    font-family: 'Bahiana';
+    src: url('../../../assets/polices/Bahiana-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'McLaren';
+    src: url('../../../assets/polices/McLaren-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

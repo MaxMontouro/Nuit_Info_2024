@@ -1,0 +1,140 @@
+
+<h1>Jeu de Mémoire - Edition Mauvais Goût</h1>
+  <div class="game-board">
+    <!-- Cartes du jeu -->
+    <div class="card" data-card="🐟">
+      <img src="https://th.bing.com/th/id/R.cd10e74c6dfd5d9015f26acd1d5e447a?rik=32bLHkJIlpzJBw&pid=ImgRaw&r=0" alt="Poisson 1" class="card-img">
+    </div>
+    <div class="card" data-card="🐠">
+      <img src="https://images6.alphacoders.com/688/688276.jpg" alt="Poisson 2" class="card-img">
+    </div>
+  <div class="card" data-card="🐟">
+    <img src="https://th.bing.com/th/id/R.cd10e74c6dfd5d9015f26acd1d5e447a?rik=32bLHkJIlpzJBw&pid=ImgRaw&r=0" alt="Poisson 1" class="card-img">
+  </div>
+  <div class="card" data-card="🐬">
+    <img src="https://th.bing.com/th/id/R.41d5752720262851ec06b18a96f4ef42?rik=umtTuYjtCppaJw&riu=http%3a%2f%2fvignette2.wikia.nocookie.net%2fbob-leponge%2fimages%2f2%2f2d%2fImageCarloTentacule.jpg%2frevision%2flatest%3fcb%3d20150816112931%26path-prefix%3dfr&ehk=GZHKKq8d1Svw%2fjSh7Rc4rWYmvHXallxEnYd9iWHO3So%3d&risl=&pid=ImgRaw&r=0" alt="Poisson 3" class="card-img">
+  </div>
+  <div class="card" data-card="🐠">
+    <img src="https://images6.alphacoders.com/688/688276.jpg" alt="Poisson 2" class="card-img">
+  </div>
+  <div class="card" data-card="🦀">
+    <img src="https://th.bing.com/th/id/OIP.PTG6WSIHP9Ff6dunYL9uKwHaH-?rs=1&pid=ImgDetMain" alt="Poisson 4" class="card-img">
+  </div>
+  <div class="card" data-card="🦀">
+    <img src="https://th.bing.com/th/id/OIP.PTG6WSIHP9Ff6dunYL9uKwHaH-?rs=1&pid=ImgDetMain" alt="Poisson 4" class="card-img">
+  </div>
+  <div class="card" data-card="🐬">
+    <img src="https://th.bing.com/th/id/R.41d5752720262851ec06b18a96f4ef42?rik=umtTuYjtCppaJw&riu=http%3a%2f%2fvignette2.wikia.nocookie.net%2fbob-leponge%2fimages%2f2%2f2d%2fImageCarloTentacule.jpg%2frevision%2flatest%3fcb%3d20150816112931%26path-prefix%3dfr&ehk=GZHKKq8d1Svw%2fjSh7Rc4rWYmvHXallxEnYd9iWHO3So%3d&risl=&pid=ImgRaw&r=0" alt="Poisson 3" class="card-img">
+  </div>
+  <!-- Bob l'Éponge géant avec des flux de lumière -->
+  <div id="bob-sponge" class="hidden">
+    <img src="https://th.bing.com/th/id/R.f49f3fde7f745a9090b4b2c400faaf26?rik=mOzulO3GczJRrg&riu=http%3a%2f%2fwww.imagespourtoi.com%2flesimages%2fbob-eponge%2fimage-bob-eponge-2.jpg&ehk=CUBpuKt57FZ9KEvl42KYImwVuYNQpQQSd%2f0G0KhE5V8%3d&risl=&pid=ImgRaw&r=0" alt="Bob l'Éponge géant" id="bob-img">
+    <div class="light-flare"></div>
+    <div class="light-flare"></div>
+    <div class="light-flare"></div>
+  </div>
+  <div id="bob-sponge" class="hidden">
+    <img src="https://th.bing.com/th/id/R.f49f3fde7f745a9090b4b2c400faaf26?rik=mOzulO3GczJRrg&riu=http%3a%2f%2fwww.imagespourtoi.com%2flesimages%2fbob-eponge%2fimage-bob-eponge-2.jpg&ehk=CUBpuKt57FZ9KEvl42KYImwVuYNQpQQSd%2f0G0KhE5V8%3d&risl=&pid=ImgRaw&r=0" alt="Bob l'Éponge géant" id="bob-img">
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    let flippedCards = [];
+    let matchedPairs = 0;
+
+    // Mélanger les cartes avant de les afficher
+    function shuffleCards() {
+    const cardValues = ['🐟', '🐠', '🦀', '🐟', '🐠', '🦀', '🐬', '🐬'];  // Poissons comme valeurs
+
+    // Mélange les valeurs des cartes
+    for (let i = cardValues.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cardValues[i], cardValues[j]] = [cardValues[j], cardValues[i]]; // Échange des éléments
+    }
+
+    // Attribue les valeurs mélangées aux cartes
+    cards.forEach((card, index) => {
+        card.setAttribute('data-card', cardValues[index]);
+    });
+    }
+
+    // Ajoute les écouteurs d'événements pour les clics
+    cards.forEach(card => {
+    card.addEventListener('click', flipCard);
+    });
+
+    // Retourner la carte
+    function flipCard() {
+    if (flippedCards.length < 2 && !this.classList.contains('flipped')) {
+        this.classList.add('flipped');
+        flippedCards.push(this);
+
+        if (flippedCards.length === 2) {
+        checkMatch();
+        }
+    }
+    }
+
+    // Vérifier si les cartes retournées correspondent
+    function checkMatch() {
+    const [firstCard, secondCard] = flippedCards;
+
+    if (firstCard.dataset.card === secondCard.dataset.card) {
+        matchedPairs++;
+        flippedCards = [];
+        if (matchedPairs === 4) {
+        setTimeout(() => {
+            document.getElementById('bob-sponge').style.display = 'block'; // Afficher Bob l'Éponge
+        }, 500);
+        }
+    } else {
+        setTimeout(() => {
+        firstCard.classList.remove('flipped');
+        secondCard.classList.remove('flipped');
+        flippedCards = [];
+        }, 1000);
+    }
+    // Fonction de victoire (après avoir gagné)
+    // Fonction de victoire (après avoir gagné)
+    if (matchedPairs === 4) {
+    setTimeout(() => {
+        // Ajouter une image de Bob l'Éponge géant
+        const bobSponge = document.createElement('img');
+        bobSponge.id = 'bob-sponge';
+        bobSponge.src = 'https://upload.wikimedia.org/wikipedia/commons/5/5f/SpongeBob_SquarePants_Character.png'; // Lien vers l'image de Bob l'Éponge
+        bobSponge.alt = 'Bob l\'éponge géant';
+        document.body.appendChild(bobSponge);
+
+        // Afficher l'image avec l'animation
+        document.getElementById('bob-sponge').style.display = 'block';
+
+        // Ajouter le message "BRAVO VOUS AVEZ GAGNÉ UN BOB"
+        const message = document.createElement('div');
+        message.innerText = 'BRAVO VOUS AVEZ GAGNÉ UN BOB';
+        message.style.fontSize = '80px';  // Taille géante
+        message.style.color = 'yellow';  // Couleur yellow
+        message.style.textShadow = '5px 5px 15px yellow, 0 0 25px red, 0 0 5px darkorange';  // Ombre pour l'effet de "mauvais goût"
+        message.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";  // Police de mauvais goût
+        message.style.position = 'fixed';
+        message.style.top = '50%';
+        message.style.left = '50%';
+        message.style.transform = 'translate(-50%, -50%)';
+        message.style.zIndex = '10000';  // Assurez-vous qu'il est au-dessus de tout
+        document.body.appendChild(message); // Ajoute le message à la page
+
+        // Ajouter le message "Signé les Tech de Co Bayonne"
+        const signatureMessage = document.createElement('div');
+        signatureMessage.innerText = 'Signé les Tech de Co Bayonne';
+        signatureMessage.classList.add('message-tech');  // Ajouter une classe CSS pour le style
+        document.body.appendChild(signatureMessage); // Ajoute le message de signature à la page
+    }, 1000);
+    }
+
+
+    }
+
+    // Mélanger les cartes lors du chargement
+    shuffleCards();
+
+  </script>
+

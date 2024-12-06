@@ -11,6 +11,9 @@ import { HomeComponent } from './components/base-site/home/home.component';
 import { WorldComponent } from './components/world/world.component';
 import { LevelComponent } from './components/world/level/level.component';
 import { QuizComponent } from './components/quiz/quiz.component';
+import { CreditsComponent } from './components/credits/credits.component';
+import { PodcastsComponent } from './components/podcasts/podcasts.component';
+import { TCComponent } from './components/tc/tc.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { QuizComponent } from './components/quiz/quiz.component';
     HomeComponent,
     WorldComponent,
     LevelComponent,
-    QuizComponent
+    QuizComponent,
+    CreditsComponent,
+    PodcastsComponent,
+    TCComponent
   ],
   imports: [
     BrowserModule,
