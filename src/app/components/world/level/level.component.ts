@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Level } from '../../../models/level.model';
+import { Level, LevelStatus } from '../../../models/level.model';
 
 @Component({
   selector: 'app-level',
@@ -18,8 +18,14 @@ export class LevelComponent {
   }
 
   launchLevel() {
-    if (this.level.background === 'blue') {
       this.start.emit(this.level.num);
-    }
+  }
+
+  isValidated(): boolean {
+    return this.level.status === LevelStatus.Validated;
+  }
+
+  isUnlocked(): boolean {
+    return this.level.status === LevelStatus.Unlocked;
   }
 }

@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Level, LevelStatus } from '../../models/level.model';
+import { PlayerService } from './player.service';
 
 @Injectable({
   providedIn: 'root', // Service accessible partout dans l'application
 })
 export class LevelService {
   private currentLevelId: number = 1; // Niveau actuel du joueur
+  constructor(private playerService: PlayerService) {}
   private levels: Level[] = [
     new Level(1, 'What is 2 + 4?', ['2', '3', '4', '6'], 3, 'blue', 100, 100, LevelStatus.Unlocked),
     new Level(2, 'What is 5 - 3?', ['1', '2', '3', '4'], 1, 'gray', 200, 100, LevelStatus.Locked),
@@ -38,6 +40,7 @@ export class LevelService {
     if (level && level.status === LevelStatus.Unlocked) {
       level.status = LevelStatus.Validated;
       this.unlockNextLevel(levelId);
+      this.playerService.validateLevel();
       level.background = 'green';
     }
   }
