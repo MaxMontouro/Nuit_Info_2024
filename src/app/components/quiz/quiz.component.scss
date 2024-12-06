@@ -5,8 +5,8 @@
 
 /* style.css */
 body {
-  font-family: 'Comic Sans MS', cursive, sans-serif; /* Pour un style cartoon */
-  background-color: #87CEEB; /* Ciel bleu pour rappeler Bikini Bottom */
+  font-family: "Comic Sans MS", cursive, sans-serif; /* Pour un style cartoon */
+  background-color: #87ceeb; /* Ciel bleu pour rappeler Bikini Bottom */
   margin: 0;
   padding: 0;
   display: flex;
@@ -18,8 +18,12 @@ body {
 
 /* Conteneur principal du quiz */
 #quiz-container {
-  background: linear-gradient(135deg, #FFD700, #FFA500); /* Dégradé doré/orange */
-  border: 5px solid #FF4500; /* Bordure orange vif */
+  background: linear-gradient(
+    135deg,
+    #ffd700,
+    #ffa500
+  ); /* Dégradé doré/orange */
+  border: 5px solid #ff4500; /* Bordure orange vif */
   border-radius: 20px; /* Coins arrondis */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombre pour un effet pop */
   width: 90%;
@@ -27,37 +31,39 @@ body {
   padding: 20px;
   text-align: center;
   animation: bobble 3s infinite ease-in-out; /* Animation pour un effet cartoon */
+  margin: auto;
 }
 
 /* Animation de "flottement" du conteneur */
 @keyframes bobble {
-  0%, 100% {
-      transform: translateY(0);
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
 /* Zone du personnage qui parle */
 #speaker {
   font-size: 1.5em;
-  color: #FF6347; /* Rouge vif */
+  color: #ff6347; /* Rouge vif */
   margin-bottom: 20px;
-  text-shadow: 2px 2px 0 #FFFFFF, -2px -2px 0 #FFFFFF; /* Texte avec effet ombre blanche */
+  text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff; /* Texte avec effet ombre blanche */
 }
 
 /* Zone de la question */
 #question {
   font-size: 1.8em;
   font-weight: bold;
-  color: #2E8B57; /* Vert algue */
+  color: #2e8b57; /* Vert algue */
   margin-bottom: 30px;
-  text-shadow: 3px 3px 0 #FFFFFF; /* Effet cartoon */
-  border: 3px dashed #FFFFFF; /* Bordure en pointillé blanche */
+  text-shadow: 3px 3px 0 #ffffff; /* Effet cartoon */
+  border: 3px dashed #ffffff; /* Bordure en pointillé blanche */
   padding: 15px;
   border-radius: 15px;
-  background-color: #ADD8E6; /* Fond bleu clair pour rappeler l'eau */
+  background-color: #add8e6; /* Fond bleu clair pour rappeler l'eau */
 }
 
 /* Zone des réponses */
@@ -69,21 +75,21 @@ body {
 
 /* Boutons de réponse */
 .answer-btn {
-  background-color: #FFA500; /* Orange vif */
-  color: #FFFFFF; /* Texte blanc */
-  border: 3px solid #FFD700; /* Bordure dorée */
+  background-color: #ffa500; /* Orange vif */
+  color: #ffffff; /* Texte blanc */
+  border: 3px solid #ffd700; /* Bordure dorée */
   border-radius: 10px; /* Coins arrondis */
   padding: 10px 20px;
   font-size: 1.2em;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s; /* Effet cartoon au survol */
-  text-shadow: 2px 2px 0 #FF6347; /* Texte ombré */
+  text-shadow: 2px 2px 0 #ff6347; /* Texte ombré */
 }
 
 /* Effet au survol des boutons */
 .answer-btn:hover {
-  background-color: #FF6347; /* Rouge vif au survol */
+  background-color: #ff6347; /* Rouge vif au survol */
   transform: scale(1.1); /* Agrandissement */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre pour un effet pop */
 }
@@ -115,33 +121,18 @@ body:after {
 /* Animation pour faire tourner les décorations */
 @keyframes spin {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes spin-reverse {
   from {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
   to {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
-}
-
-.quiz-container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-image: url('../../assets/images/landscape-spongebob.jpg'); /* Chemin de votre image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
 }

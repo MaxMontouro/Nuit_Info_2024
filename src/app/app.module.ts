@@ -14,6 +14,7 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { CreditsComponent } from './components/credits/credits.component';
 import { PodcastsComponent } from './components/podcasts/podcasts.component';
 import { TCComponent } from './components/tc/tc.component';
+import { PlayerComponent } from './components/world/player/player.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,7 @@ import { TCComponent } from './components/tc/tc.component';
     HomeComponent,
     WorldComponent,
     LevelComponent,
-    QuizComponent,
-    CreditsComponent,
-    PodcastsComponent,
-    TCComponent
+    QuizComponent
   ],
   imports: [
     BrowserModule,

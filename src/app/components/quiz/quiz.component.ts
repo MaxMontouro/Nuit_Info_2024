@@ -183,6 +183,8 @@ export class QuizComponent implements OnInit {
     const correct = this.currentQuestion.idReponse;
     if (answerIndex === correct) {
       alert('Bonne réponse !');
+      this.levelService.validateLevel(this.currentQuestion.num);
+      this.levelService.moveToNextLevel();
       this.moveToNextQuestion();
     } else {
       alert('Mauvaise réponse.');
