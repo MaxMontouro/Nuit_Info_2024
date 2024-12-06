@@ -7,6 +7,7 @@ export enum LevelStatus {
 export class Level {
     // Attributs
     num!: number;
+    titre!: string;
     question!: string;
     reponses!: string[];
     idReponse!: number;
@@ -17,9 +18,10 @@ export class Level {
 
 
     // Méthodes
-    constructor(num: number, question: string, reponses: string[], idReponse: number, background: string, posXPlateforme: number, posYPlateforme: number, status: LevelStatus)
+    constructor(num: number,titre:string, question: string, reponses: string[], idReponse: number, background: string, posXPlateforme: number, posYPlateforme: number, status: LevelStatus)
     {
         this.num = num;
+        this.titre = titre;
         this.question = question;
         this.reponses = reponses;
         this.idReponse = idReponse;
