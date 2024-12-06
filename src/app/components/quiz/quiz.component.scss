@@ -1,0 +1,147 @@
+/*button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+}*/
+
+/* style.css */
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Pour un style cartoon */
+  background-color: #87CEEB; /* Ciel bleu pour rappeler Bikini Bottom */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Conteneur principal du quiz */
+#quiz-container {
+  background: linear-gradient(135deg, #FFD700, #FFA500); /* Dégradé doré/orange */
+  border: 5px solid #FF4500; /* Bordure orange vif */
+  border-radius: 20px; /* Coins arrondis */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombre pour un effet pop */
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  text-align: center;
+  animation: bobble 3s infinite ease-in-out; /* Animation pour un effet cartoon */
+}
+
+/* Animation de "flottement" du conteneur */
+@keyframes bobble {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+/* Zone du personnage qui parle */
+#speaker {
+  font-size: 1.5em;
+  color: #FF6347; /* Rouge vif */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0 #FFFFFF, -2px -2px 0 #FFFFFF; /* Texte avec effet ombre blanche */
+}
+
+/* Zone de la question */
+#question {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #2E8B57; /* Vert algue */
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 0 #FFFFFF; /* Effet cartoon */
+  border: 3px dashed #FFFFFF; /* Bordure en pointillé blanche */
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #ADD8E6; /* Fond bleu clair pour rappeler l'eau */
+}
+
+/* Zone des réponses */
+#answers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Boutons de réponse */
+.answer-btn {
+  background-color: #FFA500; /* Orange vif */
+  color: #FFFFFF; /* Texte blanc */
+  border: 3px solid #FFD700; /* Bordure dorée */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s; /* Effet cartoon au survol */
+  text-shadow: 2px 2px 0 #FF6347; /* Texte ombré */
+}
+
+/* Effet au survol des boutons */
+.answer-btn:hover {
+  background-color: #FF6347; /* Rouge vif au survol */
+  transform: scale(1.1); /* Agrandissement */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre pour un effet pop */
+}
+
+/* Effet bouton enfoncé */
+.answer-btn:active {
+  transform: scale(0.9);
+}
+
+/* Ajout de décorations thématiques (facultatif) */
+body:before {
+  content: "🌊🍍🦀"; /* Emoji pour donner un effet cartoon de Bob l'Éponge */
+  font-size: 5rem;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  animation: spin 10s infinite linear; /* Rotation des emojis */
+}
+
+body:after {
+  content: "🌴🐚🐡"; /* Emoji décoratifs */
+  font-size: 5rem;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  animation: spin-reverse 10s infinite linear;
+}
+
+/* Animation pour faire tourner les décorations */
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+      transform: rotate(360deg);
+  }
+  to {
+      transform: rotate(0deg);
+  }
+}
+
+.quiz-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../../assets/images/landscape-spongebob.jpg'); /* Chemin de votre image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}

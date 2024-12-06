@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    //display: grid;
+    //grid-template-columns: 1fr 10 1fr;
+    margin: 0;
+    background-color: #EAE0D5;
+    font-family: "Sora", sans-serif;
+}
+
+button {
+    cursor: pointer;
+    font-family: "Sora", sans-serif;
+    background-color: #143642;
+    color: white;
+}
+
+.neon {
+    /* Apply the Monoton font and set color to #861657 */
+    color: white;
+ 
+    /* Create the neon effect using multiple text shadows */
+    text-shadow:
+        0 0 3px #861657,
+        0 0 4px #861657,
+        0 0 5px #861657,
+        0 0 6px #861657;
+ 
+    /* Add a glow animation for a flickering effect */
+    animation: glow 1s infinite alternate;
+}
+ 
+/* Define the glow animation */
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 2px #861657,
+            0 0 3px #861657,
+            0 0 4px #861657,
+            0 0 5px #861657;
+    }
+    to {
+        text-shadow:
+            0 0 3px #861657,
+            0 0 4px #861657,
+            0 0 5px #861657,
+            0 0 6px #861657,
+            0 0 7px #861657;
+    }
+}
+
+/* Define the shake animation */
+@keyframes shake {
+    0% { transform: translateX(-1px) rotate(0deg); }
+    25% { transform: translateX(1px) rotate(2deg); }
+    50% { transform: translateX(-1px) rotate(-2deg); }
+    75% { transform: translateX(1px) rotate(2deg); }
+    100% { transform: translateX(-1px) rotate(0deg); }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');

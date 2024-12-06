@@ -1,0 +1,30 @@
+<!-- <h2>Quiz for Level {{ level.num }}</h2>
+<p>{{ level.question }}</p>
+<div>
+  <button *ngFor="let option of level.reponses" (click)="checkAnswer(option)">
+    {{ option }}
+  </button>
+</div> -->
+
+<div id="quiz-container">
+  <!-- Zone pour indiquer qui parle -->
+  <div id="speaker">
+    <p id="speaker-name">Personnage : <span>{{ currentQuestion.titre }}</span></p>
+  </div>
+
+  <!-- Zone pour la question -->
+  <div id="question">
+    <p>{{ currentQuestion.question }}</p>
+  </div>
+
+  <!-- Zone pour les réponses -->
+  <div id="answers">
+    <button
+      *ngFor="let option of currentQuestion.reponses; let i = index"
+      class="answer-btn"
+      (click)="checkAnswer(i)"
+    >
+      {{ option }}
+    </button>
+  </div>
+</div>

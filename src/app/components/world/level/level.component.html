@@ -1,0 +1,10 @@
+<div class="level" [style.backgroundColor]="getPlatformColor()">
+  <h3>Level {{ level.num }}</h3>
+  <p>Status: {{ level.status }}</p>
+  <button *ngIf="isValidated() === false && isUnlocked()" (click)="clickLevel()">
+    Start
+  </button>
+  <button *ngIf="isValidated()" (click)="clickLevel()">
+    Do it again
+  </button>
+</div>
