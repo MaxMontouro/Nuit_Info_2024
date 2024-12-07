@@ -13,6 +13,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
   { path: 'podcasts', component: PodcastsComponent }, 
   { path: 'world', component: WorldComponent },
   { path: 'credits', component: CreditsComponent},

@@ -1,177 +1,174 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #ff00ff;  /* Fond mauve criard */
-    background-image: url('https://example.com/underwater-background.jpg'); /* Fond d'océan moche */
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: yellow; /* Texte jaune pour accentuer le mauvais goût */
-  }
-  
-  h1 {
-    margin-top: 50px;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: red;
-    text-shadow: 3px 3px 3px black; /* Ombre rouge pour ajouter au côté décalé */
-  }
-  
-  .game-board {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    width: 120px;
-    height: 180px;
-    border: 5px solid lime; /* Bordure fluo */
-    background-color: cyan;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.2s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.1); /* Effet de zoom quand on survole la carte */
-  }
-  
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    visibility: visible;
-  }
-  
-  .card.flipped img {
-    visibility: hidden;
-  }
-  
-  .card.flipped::before {
-    content: attr(data-card);
-    position: absolute;
-    font-size: 50px;
-    color: yellow;
-    text-shadow: 2px 2px 2px red;
-  }
-  
-  /* Animation de Bob l'Éponge géant */
-  #bob-sponge {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 9999;
-    display: none; /* Cacher par défaut */
-  }
-  
-  #bob-img {
-    width: 400px;
-    height: 400px;
-    animation: bob-appear 3s ease-out forwards;
-  }
-  
-  .light-flare {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(255, 255, 0, 0.8), rgba(255, 0, 0, 0.5));
-    border-radius: 50%;
+.tc {
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #ff00ff; /* Fond mauve criard */
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: yellow; /* Texte jaune pour accentuer le mauvais goût */
+}
+
+h1 {
+  margin-top: 0px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: red;
+  text-shadow: 3px 3px 3px black; /* Ombre rouge pour ajouter au côté décalé */
+}
+
+.game-board {
+  display: flex;
+  justify-content: center;
+  margin-top: 30vh;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 120px;
+  height: 180px;
+  border: 5px solid lime; /* Bordure fluo */
+  background-color: cyan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.1); /* Effet de zoom quand on survole la carte */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  visibility: visible;
+}
+
+.card.flipped img {
+  visibility: hidden;
+}
+
+.card.flipped::before {
+  content: attr(data-card);
+  position: absolute;
+  font-size: 50px;
+  color: yellow;
+  text-shadow: 2px 2px 2px red;
+}
+
+/* Animation de Bob l'Éponge géant */
+#bob-sponge {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  z-index: 9999;
+  display: none; /* Cacher par défaut */
+  animation: bob-appear 3s ease-out forwards;
+  background-image: url("../../assets/images/bobleponge.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+}
+
+.light-flare {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 0, 0.8),
+    rgba(255, 0, 0, 0.5)
+  );
+  border-radius: 50%;
+  opacity: 0;
+  animation: light-flare 1s infinite alternate;
+}
+
+.light-flare:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.light-flare:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.light-flare:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bob-appear {
+  0% {
+    transform: scale(0);
     opacity: 0;
-    animation: light-flare 1s infinite alternate;
   }
-  
-  .light-flare:nth-child(1) {
-    animation-delay: 0s;
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .light-flare:nth-child(2) {
-    animation-delay: 0.2s;
+}
+
+@keyframes light-flare {
+  0% {
+    opacity: 0;
+    transform: scale(1);
   }
-  
-  .light-flare:nth-child(3) {
-    animation-delay: 0.4s;
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
   }
-  
-  @keyframes bob-appear {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
+  100% {
+    opacity: 0;
+    transform: scale(1);
   }
-  
-  @keyframes light-flare {
-    0% {
-      opacity: 0;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(1);
-    }
+}
+
+@keyframes zoomDezoom {
+  0% {
+    transform: scale(1); /* Taille normale */
   }
-  
-  @keyframes zoomDezoom {
-    0% {
-      transform: scale(1); /* Taille normale */
-    }
-    50% {
-      transform: scale(1.5); /* Zoom */
-    }
-    100% {
-      transform: scale(1); /* Retour à la taille normale */
-    }
+  50% {
+    transform: scale(1.5); /* Zoom */
   }
-  
-  #bob-sponge {
-    display: none; /* L'image est cachée au départ */
-    animation: zoomDezoom 2s infinite; /* Animation de zoom-dézoom */
+  100% {
+    transform: scale(1); /* Retour à la taille normale */
   }
-  
-  @keyframes zoomDezoomPatrick {
-    0% {
-      transform: scale(1); /* Taille normale */
-    }
-    50% {
-      transform: scale(1.5); /* Zoom */
-    }
-    100% {
-      transform: scale(1); /* Retour à la taille normale */
-    }
+}
+
+#bob-sponge {
+  display: none; /* L'image est cachée au départ */
+  animation: zoomDezoom 2s infinite; /* Animation de zoom-dézoom */
+}
+
+@keyframes zoomDezoomPatrick {
+  0% {
+    transform: scale(1); /* Taille normale */
   }
-  
-  .message-tech {
-    font-size: 40px; /* Taille plus petite que le message principal */
-    color: #00FF00; /* Vert fluo */
-    font-family: 'Comic Sans MS', cursive, sans-serif;  /* Mauvais goût */
-    text-shadow: 2px 2px 10px yellow, 0 0 20px red;  /* Ombre colorée très flashy */
-    position: fixed;
-    top: 80%; /* Placer le texte plus bas que "BRAVO VOUS AVEZ GAGNÉ UN BOB" */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10000;
+  50% {
+    transform: scale(1.5); /* Zoom */
   }
-  
-  
-  
+  100% {
+    transform: scale(1); /* Retour à la taille normale */
+  }
+}
+
+.message-tech {
+  font-size: 40px; /* Taille plus petite que le message principal */
+  color: #00ff00; /* Vert fluo */
+  font-family: "Comic Sans MS", cursive, sans-serif; /* Mauvais goût */
+  text-shadow: 2px 2px 10px yellow, 0 0 20px red; /* Ombre colorée très flashy */
+  position: fixed;
+  top: 80%; /* Placer le texte plus bas que "BRAVO VOUS AVEZ GAGNÉ UN BOB" */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+}

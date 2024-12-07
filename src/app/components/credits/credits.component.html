@@ -1,26 +1,34 @@
-<h1>Crédits des utilisateurs</h1>
+<div class="credit">
+  <h1>Crédits des utilisateurs</h1>
 
-<!-- Flèche gauche -->
-<button (click)="previousUser()" class="arrow-btn">←</button>
+  <!-- Flèches au-dessus de la carte -->
+  <div class="arrow-container">
+    <button (click)="previousUser()" class="arrow-btn">←</button>
+    <button (click)="nextUser()" class="arrow-btn">→</button>
+  </div>
 
-<!-- Carte utilisateur -->
-<div class="credit-card">
-  <div class="credit-card-content">
-    <!-- Partie gauche de la carte -->
-    <div class="user-left">
-      <img [src]="currentUser.image1" alt="Image de l'utilisateur 1" class="user-image">
-      <h3 class="user-name">{{ currentUser.name1 }}</h3>
+  <!-- Carte utilisateur -->
+  <div class="credit-card" *ngIf="currentUser">
+    <div class="credit-card-content">
+      <!-- Partie gauche de la carte -->
+      <div class="user-left">
+        <div
+          class="user-image"
+          [ngStyle]="{ 'background-image': 'url(' + currentUser!.image1 + ')' }"
+        ></div>
+        <h3 class="user-name">{{ currentUser!.name1 }}</h3>
+      </div>
+
+      <!-- Partie droite de la carte -->
+      <div class="user-right">
+        <div
+          class="user-image"
+          [ngStyle]="{ 'background-image': 'url(' + currentUser!.image2 + ')' }"
+        ></div>
+        <h3 class="user-name">{{ currentUser!.name2 }}</h3>
+      </div>
+
+      <p class="user-description">{{ currentUser!.description }}</p>
     </div>
-
-    <!-- Partie droite de la carte -->
-    <div class="user-right">
-      <img [src]="currentUser.image2" alt="Image de l'utilisateur 2" class="user-image">
-      <h3 class="user-name">{{ currentUser.name2 }}</h3>
-    </div>
-
-    <p class="user-description">{{ currentUser.description }}</p>
   </div>
 </div>
-
-<!-- Flèche droite -->
-<button (click)="nextUser()" class="arrow-btn">→</button>

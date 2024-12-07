@@ -1,12 +1,17 @@
 /* Footer Styles */
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 0.75rem 1rem;
-  width: 100%;
   box-sizing: border-box;
+  width: 100%; /* Full width */
+  box-sizing: border-box;
+  background-color: #ffffff00;
 }
 
 .footer-link {
@@ -19,5 +24,16 @@
 }
 
 .footer-link:hover {
-  background-color: #276749; /* Tailwind's green-600 */
+  color: yellow; /* Tailwind's green-600 */
+}
+
+.footer-container {
+  width: fit-content;
+  height: 1.5rem;
+  padding: 2rem;
+  background-image: url("../../../assets/images/panneau.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
 }
