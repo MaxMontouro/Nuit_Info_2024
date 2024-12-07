@@ -1,177 +1,177 @@
 /* General Styles */
 body {
-    background-color: #7DD3FC; /* Tailwind's sky-300 */
-    backdrop-filter: blur(3px);
-    color: #4A5568; /* Tailwind's gray-800 */
-    font-family: sans-serif;
-    margin: 0;
-    box-sizing: border-box;
-    background-image: url('../../assets/images/img_fond2.avif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-color: #7dd3fc; /* Tailwind's sky-300 */
+  backdrop-filter: blur(3px);
+  color: #4a5568; /* Tailwind's gray-800 */
+  font-family: sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  background-image: url("../../assets/images/img_fond2.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Header Styles */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .logo {
-    width: 2.5rem;
-    height: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .logo-text {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: bold;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .header-nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .nav-link {
-    color: white;
-    background-color: #2F855A; /* Tailwind's green-700 */
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s;
+  color: white;
+  background-color: #2f855a; /* Tailwind's green-700 */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
 .nav-link:hover {
-    background-color: #276749; /* Tailwind's green-600 */
+  background-color: #276749; /* Tailwind's green-600 */
 }
 
 /* Main Content Styles */
 .main-content {
-    text-align: center;
-    padding: 2rem 1rem;
-    min-height: 80vh;
+  text-align: center;
+  padding: 2rem 1rem;
+  min-height: 80vh;
 }
 
 /* Podcast Title Section */
 .podcast-title {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .main-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #2D3748;
-    margin: 0 auto;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin: 0 auto;
 }
 
 /* Video Section Styles */
 .podcast-videos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem; /* Space between videos */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem; /* Space between videos */
 }
 
 .video-container {
-    flex: 1 1 45%;
-    max-width: 45%;
-    box-sizing: border-box;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex: 1 1 45%;
+  max-width: 45%;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .video-container video {
-    width: 100%; /* Ensure uniform video sizes */
-    height: 250px; /* Fixed height to ensure consistency */
-    border: 3px solid #2F855A; /* Optional border for style */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Ensure uniform video sizes */
+  height: 250px; /* Fixed height to ensure consistency */
+  border: 3px solid #2f855a; /* Optional border for style */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Replace Podcast 1 and 2 titles with images */
 .video-container img {
-    width: 100%; /* Ensure the image adapts to the container */
-    max-width: 300px; /* Set a reasonable max width */
-    height: auto;
-    margin: 1rem auto;
+  width: 100%; /* Ensure the image adapts to the container */
+  max-width: 300px; /* Set a reasonable max width */
+  height: auto;
+  margin: 1rem auto;
 }
 
 /* Footer Styles */
 .footer {
-    background-color: #38B2AC; /* Tailwind's teal-500 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.75rem 1rem;
-    width: 100%;
-    box-sizing: border-box;
+  background-color: #38b2ac; /* Tailwind's teal-500 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-link {
-    background-color: #2F855A; /* Tailwind's green-700 */
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s;
+  background-color: #2f855a; /* Tailwind's green-700 */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
 .footer-link:hover {
-    background-color: #276749; /* Tailwind's green-600 */
+  background-color: #276749; /* Tailwind's green-600 */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .podcast-title {
-        text-align: center; /* Center the title on mobile */
-    }
+  .podcast-title {
+    text-align: center; /* Center the title on mobile */
+  }
 
-    .main-title {
-        font-size: 2rem; /* Adjust font size on smaller screens */
-    }
+  .main-title {
+    font-size: 2rem; /* Adjust font size on smaller screens */
+  }
 
-    .podcast-videos {
-        flex-direction: column; /* Stack videos vertically */
-        align-items: center; /* Center videos */
-    }
+  .podcast-videos {
+    flex-direction: column; /* Stack videos vertically */
+    align-items: center; /* Center videos */
+  }
 
-    .video-container {
-        flex: 1 1 100%;
-        max-width: 100%;
-        align-items: center;
-    }
+  .video-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+    align-items: center;
+  }
 
-    .video-container video {
-        height: auto; /* Let the height adjust naturally on mobile */
-    }
+  .video-container video {
+    height: auto; /* Let the height adjust naturally on mobile */
+  }
 
-    .video-container img {
-        max-width: 250px; /* Reduce image size on mobile */
-    }
+  .video-container img {
+    max-width: 250px; /* Reduce image size on mobile */
+  }
 }
 
 @font-face {
-    font-family: 'Bahiana';
-    src: url('../../assets/polices/Bahiana-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Bahiana";
+  src: url("../../assets/polices/Bahiana-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
