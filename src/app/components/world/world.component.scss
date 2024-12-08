@@ -27,20 +27,11 @@
 }
 
 .level-container {
+  display: flex;
+  width: 33.33%;
   flex-shrink: 0; /* Empêche la réduction des éléments */
   margin: 0 0.5rem; /* Un peu d'espace entre les niveaux */
   transition: transform 0.3s ease-in-out;
   scroll-snap-align: start; /* Alignement magnétique pour chaque niveau */
-}
-
-@media (min-width: 768px) {
-  .level-container {
-    width: 33.33%; /* Affiche 3 niveaux sur un écran large */
-  }
-}
-
-@media (max-width: 768px) {
-  .level-container {
-    width: 100%; /* Affiche 1 niveau sur un écran mobile */
-  }
+  justify-content: center;
 }

@@ -1,7 +1,19 @@
+<!-- Le personnage ne sera affiché que si le joueur est sur le niveau sélectionné -->
+<img
+  *ngIf="isPlayerOnLevel()"
+  src="https://autocollant-sticker.com/1056-thickbox_default/bob-eponge-col.jpg"
+  alt="bob l'éponge"
+  style="display: block; position: relative; margin: 0 auto -200px -80px;"
+  width="350"
+  height="350"
+  (click)="clickLevel()"
+/>
+
+<!-- La plateforme SVG reste toujours visible -->
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="120"
-  height="120"
+  width="150"
+  height="150"
   viewBox="0 0 110 130"
   (click)="clickLevel()"
   role="button"
@@ -14,7 +26,7 @@
     cy="110"
     rx="40"
     ry="20"
-    [style.fill]="isPlayerOnLevel() ? 'red' : '#FFFFFF'"
+    [style.fill]="isPlayerOnLevel() ? '#000000' : '#FFFFFF'"
     transform="skewX(-20)"
   />
   <ellipse
@@ -26,14 +38,3 @@
     transform="skewX(-20)"
   />
 </svg>
-<img
-  *ngIf="isPlayerOnLevel()"
-  src="https://autocollant-sticker.com/1056-thickbox_default/bob-eponge-col.jpg"
-  alt="bob l'éponge"
-  style="position: absolute"
-  width="200"
-  height="200"
-  [style.top.px]="level.posXPlateforme - 10"
-  [style.left.px]="level.posYPlateforme + 370"
-  (click)="clickLevel()"
-/>
