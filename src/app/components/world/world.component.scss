@@ -2,10 +2,6 @@
   position: relative;
   width: 100vw; /* Prend toute la largeur de l'écran */
   height: 100vh; /* Prend toute la hauteur de l'écran */
-  background-image: url("../../assets/images/landscape-spongebob.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: #fff;
   overflow-x: hidden; /* Cache tout contenu qui dépasse horizontalement */
   overflow-y: hidden; /* Cache tout contenu qui dépasse verticalement */
@@ -34,4 +30,28 @@
   transition: transform 0.3s ease-in-out;
   scroll-snap-align: start; /* Alignement magnétique pour chaque niveau */
   justify-content: center;
+}
+
+.background {
+  height: 100vh;
+  background-image: url("../../assets/images/fond-bob-eponge.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  /* Ajout de l'animation */
+  animation: moveBackground 3s ease-in-out infinite alternate;
+}
+
+/* Définition de l'animation */
+@keyframes moveBackground {
+  0% {
+    background-position: center top;
+  }
+  50% {
+    background-position: center 2px;
+  }
+  100% {
+    background-position: center top;
+  }
 }

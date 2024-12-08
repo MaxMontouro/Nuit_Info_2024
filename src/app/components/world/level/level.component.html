@@ -3,7 +3,7 @@
   *ngIf="isPlayerOnLevel()"
   src="https://autocollant-sticker.com/1056-thickbox_default/bob-eponge-col.jpg"
   alt="bob l'éponge"
-  style="display: block; position: relative; margin: 0 auto -200px -80px;"
+  style="display: block; position: relative; margin: 0 auto -200px -80px"
   width="350"
   height="350"
   (click)="clickLevel()"
@@ -38,3 +38,7 @@
     transform="skewX(-20)"
   />
 </svg>
+
+<div class="title-container">
+  <h1 class="level-title">Level {{ level.num }} : {{ level.titre }}</h1>
+</div>

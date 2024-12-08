@@ -6,7 +6,6 @@ import { PlayerService } from '../../services/player.service';
 @Component({
   selector: 'app-level',
   standalone: false,
-
   templateUrl: './level.component.html',
   styleUrl: './level.component.scss',
 })
