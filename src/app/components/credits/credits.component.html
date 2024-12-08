@@ -11,20 +11,14 @@
   <div class="credit-card" *ngIf="currentUser">
     <div class="credit-card-content">
       <!-- Partie gauche de la carte -->
-      <div class="user-left">
-        <div
-          class="user-image"
-          [ngStyle]="{ 'background-image': 'url(' + currentUser!.image1 + ')' }"
-        ></div>
+      <div class="user-left" [ngClass]="getUserClass()">
+        <div class="user-image"></div>
         <h3 class="user-name">{{ currentUser!.name1 }}</h3>
       </div>
 
       <!-- Partie droite de la carte -->
-      <div class="user-right">
-        <div
-          class="user-image"
-          [ngStyle]="{ 'background-image': 'url(' + currentUser!.image2 + ')' }"
-        ></div>
+      <div class="user-right" [ngClass]="getUserClass()">
+        <div class="user-image"></div>
         <h3 class="user-name">{{ currentUser!.name2 }}</h3>
       </div>
 
