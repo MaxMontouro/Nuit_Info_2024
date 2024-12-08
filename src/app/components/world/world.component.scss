@@ -39,7 +39,6 @@
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1;
-  /* Ajout de l'animation */
   animation: moveBackground 3s ease-in-out infinite alternate;
 }
 
@@ -54,4 +53,23 @@
   100% {
     background-position: center top;
   }
+}
+
+.final-level {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  flex-shrink: 0;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  background-image: url(../../assets/images/ane1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  scroll-snap-align: start;
+  transition: scale 0.3s ease-in-out;
+}
+
+.final-level:hover {
+  scale: 1.2;
 }

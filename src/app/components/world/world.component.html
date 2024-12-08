@@ -9,6 +9,11 @@
             (completed)="onLevelCompleted(level.num)"
           ></app-level>
         </div>
+        <div
+          *ngIf="isAllLevelsCompleted"
+          class="final-level"
+          (click)="navigateToFinalLevel()"
+        ></div>
       </div>
     </div>
   </div>

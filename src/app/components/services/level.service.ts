@@ -119,28 +119,6 @@ export class LevelService {
       920,
       LevelStatus.Locked
     ),
-    new Level(
-      11,
-      "Les volcans sous-marins",
-      "Je suis un volcan sous l’eau, je libère de l’énergie et crée de nouvelles terres. Si j’étais dans ton corps, je serais quoi ?",
-      ["Ton cœur", "Ton foie", "Tes muscles", "Ton estomac"],
-      3,
-      "gray",
-      750,
-      1020,
-      LevelStatus.Locked
-    ),
-    new Level(
-      12,
-      "Les marées",
-      "Salut, c’est nous, les marées ! On monte, on descend, et on rythme la vie de l’océan. Si on était dans ton corps, qu’est-ce qu’on serait ?",
-      ["Ton cœur", "Ta respiration", "Tes articulations", "Ton système digestif"],
-      1,
-      "gray",
-      650,
-      1120,
-      LevelStatus.Locked
-    )
   ];
   
 

@@ -13,6 +13,7 @@ export class WorldComponent implements OnInit {
   levels: Level[] = [];
   visibleLevels: Level[] = [];
   currentLevel: Level | undefined;
+  isAllLevelsCompleted: boolean = false; // Nouvelle variable pour vérifier si tous les niveaux sont complétés
 
   constructor(private levelService: LevelService, private router: Router) {}
 
@@ -20,12 +21,18 @@ export class WorldComponent implements OnInit {
     this.levels = this.levelService.getLevels();
     this.currentLevel = this.levelService.getCurrentLevel();
     this.updateVisibleLevels();
+    this.checkIfAllLevelsCompleted(); // Vérifier si tous les niveaux sont terminés au démarrage
   }
 
   // Méthode appelée lorsque la fenêtre est redimensionnée
   updateVisibleLevels(): void {
     const isMobile = window.innerWidth < 768;
     this.visibleLevels = isMobile ? [this.levels[0]] : this.levels.slice(0, 3);
+  }
+
+  // Vérifie si tous les niveaux sont terminés
+  checkIfAllLevelsCompleted(): void {
+    this.isAllLevelsCompleted = this.levels.every(level => level.status === LevelStatus.Validated);
   }
 
   // Navigue vers la page de quiz
@@ -51,6 +58,14 @@ export class WorldComponent implements OnInit {
 
       // Mettre à jour les niveaux pour forcer Angular à détecter les changements
       this.levels = [...this.levels];
+
+      // Vérifier si tous les niveaux sont terminés
+      this.checkIfAllLevelsCompleted();
     }
+  }
+
+  // Méthode pour rediriger vers la page suivante lorsque tous les niveaux sont terminés
+  navigateToFinalLevel(): void {
+    this.router.navigate(['/fin']); // Remplacez par la route appropriée
   }
 }
