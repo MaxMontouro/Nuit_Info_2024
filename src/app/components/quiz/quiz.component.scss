@@ -1,19 +1,15 @@
-/*button {
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
-}*/
-
 /* style.css */
-body {
+.quiz-main {
   font-family: "Comic Sans MS", cursive, sans-serif; /* Pour un style cartoon */
   background-color: #87ceeb; /* Ciel bleu pour rappeler Bikini Bottom */
   margin: 0;
-  padding: 0;
+  padding: 8rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Conteneur principal du quiz */
