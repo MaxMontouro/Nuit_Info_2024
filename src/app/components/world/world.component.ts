@@ -5,55 +5,40 @@ import { LevelService } from '../services/level.service';
 
 @Component({
   selector: 'app-world',
-  standalone: false,
-
   templateUrl: './world.component.html',
-  styleUrl: './world.component.scss',
+  styleUrls: ['./world.component.scss'],
+  standalone: false
 })
 export class WorldComponent implements OnInit {
   levels: Level[] = [];
+  visibleLevels: Level[] = [];
   currentLevel: Level | undefined;
-
-  LevelStatus = LevelStatus;
 
   constructor(private levelService: LevelService, private router: Router) {}
 
   ngOnInit(): void {
     this.levels = this.levelService.getLevels();
     this.currentLevel = this.levelService.getCurrentLevel();
+    this.updateVisibleLevels();
   }
 
-  moveToNextLevel(): void {
-    const success = this.levelService.moveToNextLevel();
-    if (success) {
-      this.currentLevel = this.levelService.getCurrentLevel();
-    } else {
-      alert('Impossible de passer au niveau suivant. Il est bloqué.');
-    }
+  // Méthode appelée lorsque la fenêtre est redimensionnée
+  updateVisibleLevels(): void {
+    const isMobile = window.innerWidth < 768;
+    this.visibleLevels = isMobile ? [this.levels[0]] : this.levels.slice(0, 3);
   }
 
-  /*onLevelCompleted(levelId: number) {
-    const level = this.levelService.getLevelById(levelId);
-    if (level) {
-      level.background = 'green'; // Marquer comme "Réussi"
-      this.levelService.updateLevel(level);
+  // Navigue vers la page de quiz
+  startQuiz(levelId: number): void {
+    this.router.navigate(['/quiz', levelId]);
+  }
 
-      const nextLevel = this.levelService.getLevelById(levelId + 1);
-      if (nextLevel) {
-        nextLevel.background = 'blue'; // Débloquer le niveau suivant
-        this.levelService.updateLevel(nextLevel);
-      }
-
-      // Mise à jour locale
-      this.levels = this.levelService.getLevels();
-    }
-  }*/
-
+  // Marque un niveau comme terminé et débloque le suivant
   onLevelCompleted(levelId: number): void {
     const currentIndex = this.levels.findIndex((level) => level.num === levelId);
 
     if (currentIndex !== -1) {
-      // Marquer le niveau actuel comme "Validé"
+      // Marquer le niveau actuel comme validé
       this.levels[currentIndex].status = LevelStatus.Validated;
 
       // Débloquer le niveau suivant, si disponible
@@ -67,27 +52,5 @@ export class WorldComponent implements OnInit {
       // Mettre à jour les niveaux pour forcer Angular à détecter les changements
       this.levels = [...this.levels];
     }
-  }
-
-  getLevelClass(level: Level): string {
-    switch (level.status) {
-      case LevelStatus.Locked:
-        return 'locked';
-      case LevelStatus.Unlocked:
-        return 'unlocked';
-      case LevelStatus.Validated:
-        return 'validated';
-      default:
-        return '';
-    }
-  }
-
-  validateLevel(levelId: number): void {
-    this.levelService.validateLevel(levelId);
-    this.levels = this.levelService.getLevels();
-  }
-
-  startQuiz(levelId: number) {
-    this.router.navigate(['/quiz', levelId]);
   }
 }

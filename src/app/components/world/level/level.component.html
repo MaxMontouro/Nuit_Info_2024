@@ -1,38 +1,39 @@
-
-  <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="120"
-        height="120"
-        viewBox="0 0 110 130"
-        (click)="clickLevel()" 
-        role="button"
-        tabindex="0" 
-        (keydown.enter)="clickLevel()"
-        class="level-round"
-        style="position: absolute;"
-        [style.top]="level.posXPlateforme + 50"
-        [style.left]="level.posYPlateforme + 400"
-      >
-        <ellipse
-          cx="100"
-          cy="110"
-          rx="40"
-          ry="20"
-          [style.fill]="isPlayerOnLevel() ? 'red' : '#FFFFFF'"
-          transform="skewX(-20)"
-        />
-        <ellipse
-          cx="100"
-          cy="110"
-          rx="35"
-          ry="15"
-          [style.fill]="getPlatformColor()"
-          transform="skewX(-20)"
-        />
-      </svg>
-      <img *ngIf="isPlayerOnLevel()" src="https://autocollant-sticker.com/1056-thickbox_default/bob-eponge-col.jpg" alt="bob l'éponge" style="position: absolute;"
-      width="200"
-      height="200"
-      [style.top.px]="level.posXPlateforme - 10"
-      [style.left.px]="level.posYPlateforme + 370"
-      (click)="clickLevel()">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="120"
+  height="120"
+  viewBox="0 0 110 130"
+  (click)="clickLevel()"
+  role="button"
+  tabindex="0"
+  (keydown.enter)="clickLevel()"
+  class="level-round"
+>
+  <ellipse
+    cx="100"
+    cy="110"
+    rx="40"
+    ry="20"
+    [style.fill]="isPlayerOnLevel() ? 'red' : '#FFFFFF'"
+    transform="skewX(-20)"
+  />
+  <ellipse
+    cx="100"
+    cy="110"
+    rx="35"
+    ry="15"
+    [style.fill]="getPlatformColor()"
+    transform="skewX(-20)"
+  />
+</svg>
+<img
+  *ngIf="isPlayerOnLevel()"
+  src="https://autocollant-sticker.com/1056-thickbox_default/bob-eponge-col.jpg"
+  alt="bob l'éponge"
+  style="position: absolute"
+  width="200"
+  height="200"
+  [style.top.px]="level.posXPlateforme - 10"
+  [style.left.px]="level.posYPlateforme + 370"
+  (click)="clickLevel()"
+/>

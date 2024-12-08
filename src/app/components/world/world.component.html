@@ -1,12 +1,13 @@
 <div class="world-map">
-  <div class="levels">
-    <div *ngFor="let level of levels" class="level-container">
-      <app-level
-        [level]="level"
-        (start)="startQuiz(level.num)"
-        (completed)="onLevelCompleted(level.num)"
-      ></app-level>
+  <div class="levels-container">
+    <div class="levels">
+      <div *ngFor="let level of levels" class="level-container">
+        <app-level
+          [level]="level"
+          (start)="startQuiz(level.num)"
+          (completed)="onLevelCompleted(level.num)"
+        ></app-level>
+      </div>
     </div>
   </div>
 </div>
-
